@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include <iostream>
 #include <conio.h>
-#include <cmath>
 using namespace std;
 
 int main()
@@ -22,8 +21,8 @@ int main()
 				if ((num[0] * num[0] + num[1] * num[1]) == (num[2] * num[2]))
 				{
 					bool already_found = false;
-					//Проверка, не найдена ли уже такая  
-					//тройка (например 3 4 5 и 4 3 5)
+					//ГЏГ°Г®ГўГҐГ°ГЄГ , Г­ГҐ Г­Г Г©Г¤ГҐГ­Г  Г«ГЁ ГіГ¦ГҐ ГІГ ГЄГ Гї  
+					//ГІГ°Г®Г©ГЄГ  (Г­Г ГЇГ°ГЁГ¬ГҐГ° 3 4 5 ГЁ 4 3 5)
 					for (int i = 0; i < cnt; i++) 
 					{
 						if (num[0] == nums[i][1] && num[1] == nums[i][0])
