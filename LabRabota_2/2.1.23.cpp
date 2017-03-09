@@ -174,7 +174,7 @@ void calculate_cost(double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS])
 	double total_cost = 0;
 	double total_weight = 0;
 
-	for (int i = MANDARINS; i < AMOUNT_OF_FRUITS; i++) //Подсчёт общей стоимости и общего веса
+	for (int i = MANDARINS; i < AMOUNT_OF_FRUITS; i++) //ГЏГ®Г¤Г±Г·ВёГІ Г®ГЎГ№ГҐГ© Г±ГІГ®ГЁГ¬Г®Г±ГІГЁ ГЁ Г®ГЎГ№ГҐГЈГ® ГўГҐГ±Г 
 	{
 		total_cost += info[COST][i];
 		total_weight += info[WEIGHT][i];
@@ -190,7 +190,7 @@ void calculate_cost(double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS])
 
 	std::cout << "\n10% discount for $100 order";
 
-	if (total_cost >= 100) //Подсчёт скидки
+	if (total_cost >= 100) //ГЏГ®Г¤Г±Г·ВёГІ Г±ГЄГЁГ¤ГЄГЁ
 	{
 		std::cout << "(+)" << std::endl;
 		total_cost *= 0.9;
@@ -202,7 +202,7 @@ void calculate_cost(double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS])
 
 	std::cout << "Delivery cost: ";
 
-	if (total_weight < 5) //Подсчёт стоимости доставки
+	if (total_weight < 5) //ГЏГ®Г¤Г±Г·ВёГІ Г±ГІГ®ГЁГ¬Г®Г±ГІГЁ Г¤Г®Г±ГІГ ГўГЄГЁ
 	{
 		std::cout << "1$" << std::endl;
 		total_cost += 1;
