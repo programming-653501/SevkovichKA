@@ -21,7 +21,7 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 	
-	std::cout << "Добро пожаловать в магазин eFruit!";
+	std::cout << "Г„Г®ГЎГ°Г® ГЇГ®Г¦Г Г«Г®ГўГ ГІГј Гў Г¬Г ГЈГ Г§ГЁГ­ eFruit!";
 
 	double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS] = {};
 
@@ -76,8 +76,8 @@ int main()
 			
 			case 0:
 			{
-				std::cout << "\nСпасибо, что выбрали магазин eFruit!";
-				std::cout << "\nНажмите любую клавишу для выхода.";
+				std::cout << "\nГ‘ГЇГ Г±ГЁГЎГ®, Г·ГІГ® ГўГ»ГЎГ°Г Г«ГЁ Г¬Г ГЈГ Г§ГЁГ­ eFruit!";
+				std::cout << "\nГЌГ Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ«Г ГўГЁГёГі Г¤Г«Гї ГўГ»ГµГ®Г¤Г .";
 				_getch();
 				return 0;
 			}
@@ -90,9 +90,9 @@ int menu_and_choise()
 {
 	int choise;
 
-	std::cout << "\nВы в меню.\nВыбирите, что делать дальше.\n\n" <<
-		"1) Заказать мандарины\n2) Заказать персики\n3) Заказать виноград\n" <<
-		"4) Показать корзину\n5) Расчёт стоимости заказа\n6) Обратная связь\n0) Выход\n";
+	std::cout << "\nГ‚Г» Гў Г¬ГҐГ­Гѕ.\nГ‚Г»ГЎГЁГ°ГЁГІГҐ, Г·ГІГ® Г¤ГҐГ«Г ГІГј Г¤Г Г«ГјГёГҐ.\n\n" <<
+		"1) Г‡Г ГЄГ Г§Г ГІГј Г¬Г Г­Г¤Г Г°ГЁГ­Г»\n2) Г‡Г ГЄГ Г§Г ГІГј ГЇГҐГ°Г±ГЁГЄГЁ\n3) Г‡Г ГЄГ Г§Г ГІГј ГўГЁГ­Г®ГЈГ°Г Г¤\n" <<
+		"4) ГЏГ®ГЄГ Г§Г ГІГј ГЄГ®Г°Г§ГЁГ­Гі\n5) ГђГ Г±Г·ВёГІ Г±ГІГ®ГЁГ¬Г®Г±ГІГЁ Г§Г ГЄГ Г§Г \n6) ГЋГЎГ°Г ГІГ­Г Гї Г±ГўГїГ§Гј\n0) Г‚Г»ГµГ®Г¤\n";
 
 	while (true)
 	{
@@ -103,10 +103,10 @@ int menu_and_choise()
 			break;
 		}
 
-		std::cout << "\nНеверный ввод! Введите ещё раз: ";
+		std::cout << "\nГЌГҐГўГҐГ°Г­Г»Г© ГўГўГ®Г¤! Г‚ГўГҐГ¤ГЁГІГҐ ГҐГ№Вё Г°Г Г§: ";
 	}
 
-	std::cout << "\nВы выбрали: " << choise << std::endl;
+	std::cout << "\nГ‚Г» ГўГ»ГЎГ°Г Г«ГЁ: " << choise << std::endl;
 
 	return choise;
 }
@@ -115,8 +115,8 @@ void make_order(double &cost, double &weight, const double cost_per_kg)
 {
 	double weight_temp;
 
-	std::cout << "\nВведите 0 чтобы вернуться обратно в меню.";
-	std::cout << "\nСколько килограмм вы хотите заказать?\nДробную часть отделяйте от целой запятой\nЗаказать: ";
+	std::cout << "\nГ‚ГўГҐГ¤ГЁГІГҐ 0 Г·ГІГ®ГЎГ» ГўГҐГ°Г­ГіГІГјГ±Гї Г®ГЎГ°Г ГІГ­Г® Гў Г¬ГҐГ­Гѕ.";
+	std::cout << "\nГ‘ГЄГ®Г«ГјГЄГ® ГЄГЁГ«Г®ГЈГ°Г Г¬Г¬ ГўГ» ГµГ®ГІГЁГІГҐ Г§Г ГЄГ Г§Г ГІГј?\nГ„Г°Г®ГЎГ­ГіГѕ Г·Г Г±ГІГј Г®ГІГ¤ГҐГ«ГїГ©ГІГҐ Г®ГІ Г¶ГҐГ«Г®Г© Г§Г ГЇГїГІГ®Г©\nГ‡Г ГЄГ Г§Г ГІГј: ";
 
 	while (true)
 	{
@@ -139,15 +139,15 @@ void make_order(double &cost, double &weight, const double cost_per_kg)
 			}
 		}
 
-		std::cout << "\nНеверный ввод! Введите ещё раз: ";
+		std::cout << "\nГЌГҐГўГҐГ°Г­Г»Г© ГўГўГ®Г¤! Г‚ГўГҐГ¤ГЁГІГҐ ГҐГ№Вё Г°Г Г§: ";
 	}
 
 	weight += weight_temp;
 	
 	cost += weight_temp * cost_per_kg;
 
-	std::cout << "\nВаш заказ принят!";
-	std::cout << "\nНажмите любую клавишу для выхода в меню.\n\n";
+	std::cout << "\nГ‚Г Гё Г§Г ГЄГ Г§ ГЇГ°ГЁГ­ГїГІ!";
+	std::cout << "\nГЌГ Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ«Г ГўГЁГёГі Г¤Г«Гї ГўГ»ГµГ®Г¤Г  Гў Г¬ГҐГ­Гѕ.\n\n";
 	_getch();
 }
 
@@ -155,18 +155,18 @@ void show_cart(double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS])
 {
 	std::cout << std::setprecision(2) << std::fixed;
 
-	std::cout << "\nВы наказали:\n";
+	std::cout << "\nГ‚Г» Г­Г ГЄГ Г§Г Г«ГЁ:\n";
 
-	std::cout << "Мандарины: " << info[WEIGHT][MANDARINS] << " кг стоимостью "
+	std::cout << "ГЊГ Г­Г¤Г Г°ГЁГ­Г»: " << info[WEIGHT][MANDARINS] << " ГЄГЈ Г±ГІГ®ГЁГ¬Г®Г±ГІГјГѕ "
 		<< "$" << info[COST][MANDARINS] << std::endl;
 
-	std::cout << "Персики: " << info[WEIGHT][PEACHES] << " кг стоимостью "
+	std::cout << "ГЏГҐГ°Г±ГЁГЄГЁ: " << info[WEIGHT][PEACHES] << " ГЄГЈ Г±ГІГ®ГЁГ¬Г®Г±ГІГјГѕ "
 		<< "$" << info[COST][PEACHES] << std::endl;
 	
-	std::cout << "Виноград: " << info[WEIGHT][GRAPES] << " кг стоимостью "
+	std::cout << "Г‚ГЁГ­Г®ГЈГ°Г Г¤: " << info[WEIGHT][GRAPES] << " ГЄГЈ Г±ГІГ®ГЁГ¬Г®Г±ГІГјГѕ "
 		<< "$" << info[COST][GRAPES] << std::endl;
 	
-	std::cout << std::endl << "\nНажмите любую клавишу для выхода в меню.\n\n";
+	std::cout << std::endl << "\nГЌГ Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ«Г ГўГЁГёГі Г¤Г«Гї ГўГ»ГµГ®Г¤Г  Гў Г¬ГҐГ­Гѕ.\n\n";
 	
 	_getch();
 }
@@ -176,7 +176,7 @@ void calculate_cost(double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS])
 	double total_cost = 0;
 	double total_weight = 0;
 
-	for (int i = MANDARINS; i < AMOUNT_OF_FRUITS; i++) //Подсчёт общей стоимости и общего веса
+	for (int i = MANDARINS; i < AMOUNT_OF_FRUITS; i++) //ГЏГ®Г¤Г±Г·ВёГІ Г®ГЎГ№ГҐГ© Г±ГІГ®ГЁГ¬Г®Г±ГІГЁ ГЁ Г®ГЎГ№ГҐГЈГ® ГўГҐГ±Г 
 	{
 		total_cost += info[COST][i];
 		total_weight += info[WEIGHT][i];
@@ -184,15 +184,15 @@ void calculate_cost(double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS])
 
 	if (0 == total_cost)
 	{
-		std::cout << "Ваша корзина пуста!";
-		std::cout << "\nНажмите любую клавишу для выхода в меню.\n\n";
+		std::cout << "Г‚Г ГёГ  ГЄГ®Г°Г§ГЁГ­Г  ГЇГіГ±ГІГ !";
+		std::cout << "\nГЌГ Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ«Г ГўГЁГёГі Г¤Г«Гї ГўГ»ГµГ®Г¤Г  Гў Г¬ГҐГ­Гѕ.\n\n";
 		_getch();
 		return;
 	}
 
-	std::cout << "\nСкидка 10% за заказ от $100 ";
+	std::cout << "\nГ‘ГЄГЁГ¤ГЄГ  10% Г§Г  Г§Г ГЄГ Г§ Г®ГІ $100 ";
 
-	if (total_cost >= 100) //Подсчёт скидки
+	if (total_cost >= 100) //ГЏГ®Г¤Г±Г·ВёГІ Г±ГЄГЁГ¤ГЄГЁ
 	{
 		std::cout << "(+)" << std::endl;
 		total_cost *= 0.9;
@@ -202,9 +202,9 @@ void calculate_cost(double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS])
 		std::cout << "(-)" << std::endl;
 	}
 
-	std::cout << "Стоимость доставки: ";
+	std::cout << "Г‘ГІГ®ГЁГ¬Г®Г±ГІГј Г¤Г®Г±ГІГ ГўГЄГЁ: ";
 
-	if (total_weight < 5) //Подсчёт стоимости доставки
+	if (total_weight < 5) //ГЏГ®Г¤Г±Г·ВёГІ Г±ГІГ®ГЁГ¬Г®Г±ГІГЁ Г¤Г®Г±ГІГ ГўГЄГЁ
 	{
 		std::cout << "1$" << std::endl;
 		total_cost += 1;
@@ -221,17 +221,17 @@ void calculate_cost(double info[AMOUNT_OF_FIELDS][AMOUNT_OF_FRUITS])
 		total_cost += extra; 
 	}
 
-	std::cout << "Общая стоимость заказа $" << total_cost << std::endl;
+	std::cout << "ГЋГЎГ№Г Гї Г±ГІГ®ГЁГ¬Г®Г±ГІГј Г§Г ГЄГ Г§Г  $" << total_cost << std::endl;
 
-	std::cout << "\nНажмите любую клавишу для выхода в меню.\n\n";
+	std::cout << "\nГЌГ Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ«Г ГўГЁГёГі Г¤Г«Гї ГўГ»ГµГ®Г¤Г  Гў Г¬ГҐГ­Гѕ.\n\n";
 	_getch();
 }
 
 void feedback()
 {
-	std::cout << "\nМагазин eFruit\nЛицензия №735926861122.\nТелефон для справок +375291234567";
+	std::cout << "\nГЊГ ГЈГ Г§ГЁГ­ eFruit\nГ‹ГЁГ¶ГҐГ­Г§ГЁГї В№735926861122.\nГ’ГҐГ«ГҐГґГ®Г­ Г¤Г«Гї Г±ГЇГ°Г ГўГ®ГЄ +375291234567";
 
-	std::cout << "\nНажмите любую клавишу для выхода в меню.\n\n";
+	std::cout << "\nГЌГ Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ«Г ГўГЁГёГі Г¤Г«Гї ГўГ»ГµГ®Г¤Г  Гў Г¬ГҐГ­Гѕ.\n\n";
 
 	_getch();
 }
@@ -247,4 +247,4 @@ bool is_udouble(std::string d_num)
 	}
 
 	return true;
-}
+} 
