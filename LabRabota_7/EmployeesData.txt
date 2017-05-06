@@ -1,0 +1,79 @@
+John Smith
+06/10/1978
+MP3424234
+234432234
+MSLU'98
+Master
+78.76
+02/25/2008
+0
+As usual name as possible~Agent from Matrix~Can copy himself~Threat to the Matrix
+Krukov Eugenee
+06/08/1998
+MP3212342
+234456454
+BNTU'18
+Architect
+67.76
+02/07/2017
+1
+Alcoholic
+Michael Moiseenko
+07/22/1999
+MP672301
+789756654
+BSUIR'20
+Student
+90.75
+01/09/2019
+1
+Student of the FACULTY OF ENGINEERING AND ECONOMICS
+Gannibal Lector
+11/22/1965
+MP321345
+234565432
+BSUIR'98
+QA
+11.23
+05/30/1999
+0
+Eats people~Has a crime record~Pshycologist
+Siaukovich Ciryl
+06/22/1998
+MP653501
+123456789
+BSUIR'16
+Student
+100
+09/01/2016
+1
+Always young~Always drunk
+Sherlock Holmes
+12/30/1993
+MP654321
+567890345
+BSUIR'16
+Manager
+12.21
+12/12/2010
+0
+True Detective~Lives on Baker-street 221B
+John Watson
+11/22/1997
+MP321456
+123456787
+BSUIR'1
+Team Leader
+45.12
+01/10/2015
+1
+
+Antony Hopkins
+12/12/1934
+MP34242
+123456789
+123
+wef
+123.23
+11/22/3333
+1
