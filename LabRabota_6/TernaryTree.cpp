@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "TernaryTree.h"
 
-void TernaryTree::SetMiddleBranch(std::string pString, int pBegin, Node* &pStartingPoint)
+void TernaryTree::setMiddleBranch(std::string pString, int pBegin, Node* &pStartingPoint)
 {
 	pStartingPoint = new Node;
 
@@ -10,7 +10,7 @@ void TernaryTree::SetMiddleBranch(std::string pString, int pBegin, Node* &pStart
 	for (size_t i = pBegin; i < pString.length(); i++)
 	{
 		temp_node->value = pString[i];
-		SetNullptrChildren(temp_node);
+		setNullptrChildren(temp_node);
 
 		if (i != pString.length() - 1)
 		{
@@ -20,79 +20,84 @@ void TernaryTree::SetMiddleBranch(std::string pString, int pBegin, Node* &pStart
 	}
 }
 
-void TernaryTree::SetNullptrChildren(Node * pNode)
+void TernaryTree::setNullptrChildren(Node * pNode)
 {
 	pNode->left = pNode->right = pNode->middle = nullptr;
 }
 
-void TernaryTree::InsertNew(std::string pValue, int pStringAt, Node* &pCurrentNode)
+void TernaryTree::insert(std::string pValue, int pCurrentPositionAtString, Node* &pCurrentNode)
 {
-	if (pStringAt == pValue.length())
+	if (pCurrentPositionAtString == pValue.length())
 	{
 		return;
 	}
 
 	if (pCurrentNode == nullptr)
 	{
-		SetMiddleBranch(pValue, pStringAt, pCurrentNode);
+		setMiddleBranch(pValue, pCurrentPositionAtString, pCurrentNode);
 		return;
 	}
-	else if (pCurrentNode->value == pValue[pStringAt])
+	
+	if (pCurrentNode->value == pValue[pCurrentPositionAtString])
 	{
-		if (pCurrentNode->middle->value == pValue[pStringAt + 1])
-		{
-			InsertNew(pValue, pStringAt + 1, pCurrentNode->middle);
-		}
-		else if (pCurrentNode->middle->value > pValue[pStringAt + 1])
-		{
-			InsertNew(pValue, pStringAt + 1, pCurrentNode->left);
-		}
-		else
-		{
-			InsertNew(pValue, pStringAt + 1, pCurrentNode->right);
-		}
+		insert(pValue, pCurrentPositionAtString + 1, pCurrentNode->middle);
 	}
-	else if (pCurrentNode->middle->value > pValue[pStringAt])
+	else if (pCurrentNode->value > pValue[pCurrentPositionAtString])
 	{
-		InsertNew(pValue, pStringAt, pCurrentNode->left);
+		insert(pValue, pCurrentPositionAtString, pCurrentNode->left);
 	}
 	else
 	{
-		InsertNew(pValue, pStringAt, pCurrentNode->right);
+		insert(pValue, pCurrentPositionAtString, pCurrentNode->right);
 	}
 }
 
-int TernaryTree::Depth(Node* pCurrentNode)
+int TernaryTree::depth(Node* pCurrentNode)
 {
 	if (pCurrentNode == nullptr)
 	{
 		return 0;
 	}
-	
-	int leftDepth = Depth(pCurrentNode->left);
-	int middleDepth = Depth(pCurrentNode->middle);
-	int rightDepth = Depth(pCurrentNode->right);
+
+	int leftDepth = depth(pCurrentNode->left);
+	int middleDepth = depth(pCurrentNode->middle);
+	int rightDepth = depth(pCurrentNode->right);
 
 	return std::fmax(leftDepth + 1, std::fmax(middleDepth + 1, rightDepth + 1));
 }
 
-void TernaryTree::DestroySubTree(Node * pCurrentNode)
+std::string TernaryTree::toLower(std::string pValue)
+{
+	int StringSize = pValue.size();
+
+	for (int i = 0; i < StringSize; i++)
+	{
+		if (pValue[i] >= 'A' && pValue[i] <= 'Z')
+		{
+			pValue[i] -= ('Z' - 'z');
+		}
+	}
+
+	return pValue;
+}
+
+void TernaryTree::destroySubtree(Node * pCurrentNode)
 {
 	if (pCurrentNode != nullptr)
 	{
 		if (pCurrentNode->left != nullptr)
 		{
-			DestroySubTree(pCurrentNode->left);
+			destroySubtree(pCurrentNode->left);
 		}
 
 		if (pCurrentNode->middle != nullptr)
 		{
-			DestroySubTree(pCurrentNode->middle);
+			destroySubtree(pCurrentNode->middle);
 		}
 
 		if (pCurrentNode->right != nullptr)
 		{
-			DestroySubTree(pCurrentNode->right);
+			destroySubtree(pCurrentNode->right);
 		}
 
 		delete pCurrentNode;
