@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <string.h>
+#include <locale>
 
 class TernaryTree
 {
@@ -14,11 +16,12 @@ private:
 
 	Node* root;
 
-	void SetMiddleBranch(std::string pString, int pBegin, Node* &pStartingPoint);
-	void InsertNew(std::string pValue, int pStringAt, Node* &pCurrentNode);
-	void SetNullptrChildren(Node* pNode);
-	void DestroySubTree(Node* pCurrentNode);
-	int Depth(Node* pCurrentNode);
+	void setMiddleBranch(std::string pString, int pBegin, Node* &pStartingPoint);
+	void insert(std::string pValue, int pStringAt, Node* &pCurrentNode);
+	void setNullptrChildren(Node* pNode);
+	void destroySubtree(Node* pCurrentNode);
+	int depth(Node* pCurrentNode);
+	std::string toLower(std::string pValue);
 
 public:
 	TernaryTree()
@@ -26,26 +29,27 @@ public:
 		root = nullptr;
 	}
 
-	void Put(std::string pValue)
+	void Add(std::string pValue)
 	{
+		pValue = toLower(pValue);
+
 		if (root == nullptr)
 		{
-			SetMiddleBranch(pValue, 0, root);
+			setMiddleBranch(pValue, 0, root);
 		}
 		else
 		{
-			InsertNew(pValue, 0, root);
+			insert(pValue, 0, root);
 		}
 	}
 
 	int GetDepth()
 	{
-		return Depth(root);
+		return depth(root);
 	}
 
 	~TernaryTree()
 	{
-		DestroySubTree(root);
+		destroySubtree(root);
 	}
 };
-
